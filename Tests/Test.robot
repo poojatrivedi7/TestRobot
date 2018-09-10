@@ -3,7 +3,7 @@
 Resource    ${Root}/Lib/BookCancelMeetingPage/BookCancelKeywords.robot
 
 *** Test Cases ***
-TC_1
+TC_BookMeeting
     [Tags]    DEBUG
     Login Xornet
     Navigate To Meeting Room

@@ -70,7 +70,7 @@ Book Meeting Room
     Selenium2Library.Should Be True    '${meeting_time}' == '${actual_text}'
 
 Cancel Meeting
-    [Documentation]    Cancel Meeting and verify meeting is cancelled
+    [Documentation]    Cancel Meeting and verify the meeting is cancelled
     Selenium2Library.Click Element    ${booked_meeting_details}
     Selenium2Library.Wait Until Element Is Enabled    ${cancel_booking}
     Selenium2Library.Click Element    ${cancel_booking}
