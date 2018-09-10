@@ -1,5 +1,5 @@
 *** Variables ***
 ${URL} =    https://xornet.xoriant.com/
-${browser} =    chrome
+${Browser} =    chrome
 ${user} =    xor-ind\\mehta_an
-${pass_word} =    123456
+${pwd} =    123456

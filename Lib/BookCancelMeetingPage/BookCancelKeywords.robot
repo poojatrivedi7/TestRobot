@@ -3,21 +3,19 @@ Documentation    The file is for Booking & cancel the meeting room
 ...    It utilizes keywords supported by Selenium2Library
 
 
-Resource    ${Root}/Config/config.robot
-Resource    ${Root}/Lib/BookCancelMeetingPage/BookCancelObject.robot
-Resource    ${Root}/Data/BookMeetingData.robot
-Suite Teardown     Close All Browsers
+Resource    ${ROOT}/Config/config.robot
+Resource    ${ROOT}/Lib/BookCancelMeetingPage/BookCancelObject.robot
+Resource    ${ROOT}/Data/BookMeetingData.robot
 Library    Selenium2Library
-Library  OperatingSystem
+Library    BuiltIn
 
 *** Keywords ***
-
 Login Xornet
     [Documentation]    Login to xornet site
-    Open Browser    ${URL}
+    Open Browser    ${URL}    ${Browser}
     Selenium2Library.Maximize Browser Window
     Selenium2Library.Input Text    ${username}    ${user}
-    Selenium2Library.Input Password    ${password}    ${pass_word}
+    Selenium2Library.Input Password    ${password}    ${pwd}
     Selenium2Library.Click Element    ${sign_in}
     Selenium2Library.Wait Until Element Is Visible    ${log_out}    ${Delay}
 
@@ -46,28 +44,32 @@ Meeting Room Details
     Selenium2Library.Input Text    ${meeting_subject}    ${meeting_subject_val}
     Selenium2Library.Double Click Element    ${start_time}
     Selenium2Library.Click Element    ${start_hour_ddl}
-    Selenium2Library.Select From List By Value    ${start_hour_value}    ${start_hour_val}
+    Selenium2Library.Select From List By Value    ${start_hour}    ${start_hour_val}
+    Selenium2Library.Click Element    ${start_hour_ddl}
+    Selenium2Library.Select From List By Value    ${start_min}    ${start_min_val}
     Selenium2Library.Click Button    ${done_button}
     Selenium2Library.Double Click Element    ${end_time}
     Selenium2Library.Click Element    ${end_hour_ddl}
-    Selenium2Library.Select From List By Value    ${end_hour_value}    ${end_hour_val}
+    Selenium2Library.Select From List By Value    ${end_hour}    ${end_hour_val}
+    Selenium2Library.Click Element    ${end_min_ddl}
+    Selenium2Library.Select From List By Value    ${end_min}    ${end_min_val}
     Selenium2Library.Click Button    ${done_button}
-    Selenium2Library.Execute Javascript    window.scrollTo(0, document.body.scrollHeight)
+    Selenium2Library.Execute Javascript    ${js_script}
     Selenium2Library.Click Button    ${confirm_booking}
-    Selenium2Library.Execute Javascript    window.scrollTo(0, document.body.scrollHeight)
+    Selenium2Library.Execute Javascript    ${js_script}
     Selenium2Library.Element Should Be Visible     ${skip_invite}
 
 Book Meeting Room
     [Documentation]    Confirm meeting and verify the booked meeting
     Selenium2Library.Click Button    ${confirm_booking}
-    Selenium2Library.Execute Javascript    window.scrollTo(0, document.body.scrollHeight)
+    Selenium2Library.Execute Javascript    ${js_script}
     Selenium2Library.Click Button    ${skip_invite}
     Selenium2Library.Wait Until Element Is Visible    ${facilities_field}    ${Delay}
     Selenium2Library.Click Element    ${my_bookings_tab}
-    Selenium2Library.Execute Javascript    window.scrollTo(0, document.body.scrollHeight)
+    Selenium2Library.Execute Javascript    ${js_script}
     Selenium2Library.Wait Until Element Is Visible    ${booked_meeting}    ${Delay}
     ${actual_text} =    Get Text    ${booked_time}
-    Selenium2Library.Should Be True    '${meeting_time}' == '${actual_text}'
+    BuiltIn.Should Be True    '${meeting_time}' == '${actual_text}'
 
 Cancel Meeting
     [Documentation]    Cancel Meeting and verify the meeting is cancelled

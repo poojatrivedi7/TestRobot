@@ -1,6 +1,7 @@
 *** Settings ***
 
-Resource    ${Root}/Lib/BookCancelMeetingPage/BookCancelKeywords.robot
+Resource    ${ROOT}/Lib/BookCancelMeetingPage/BookCancelKeywords.robot
+Suite Teardown    Close All Browsers
 
 *** Test Cases ***
 TC_BookMeeting
