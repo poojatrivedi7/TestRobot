@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generated="20180907 18:24:38.213" generator="Robot 3.0.4 (Python 3.5.2 on win32)">
+<suite name="Result &amp; Test" id="s1">
+<suite name="Result" source="C:\Result" id="s1-s1">
+<status status="PASS" starttime="20180907 18:24:38.273" endtime="20180907 18:24:38.273"></status>
+</suite>
+<suite name="Test" source="C:\Users\ankush.mehta\TestRobot\Tests\Test.robot" id="s1-s2">
+<test name="TC_1" id="s1-s2-t1">
+<kw name="Login Xornet">
+<msg level="FAIL" timestamp="20180907 18:24:38.283">No keyword with name 'Login Xornet' found.</msg>
+<status status="FAIL" starttime="20180907 18:24:38.283" endtime="20180907 18:24:38.283"></status>
+</kw>
+<tags>
+<tag>DEBUG</tag>
+</tags>
+<status status="FAIL" starttime="20180907 18:24:38.283" endtime="20180907 18:24:38.283" critical="yes">No keyword with name 'Login Xornet' found.</status>
+</test>
+<status status="FAIL" starttime="20180907 18:24:38.273" endtime="20180907 18:24:38.283"></status>
+</suite>
+<status status="FAIL" starttime="20180907 18:24:38.223" endtime="20180907 18:24:38.293"></status>
+</suite>
+<statistics>
+<total>
+<stat pass="0" fail="1">Critical Tests</stat>
+<stat pass="0" fail="1">All Tests</stat>
+</total>
+<tag>
+<stat pass="0" fail="1">DEBUG</stat>
+</tag>
+<suite>
+<stat name="Result &amp; Test" pass="0" fail="1" id="s1">Result &amp; Test</stat>
+<stat name="Result" pass="0" fail="0" id="s1-s1">Result &amp; Test.Result</stat>
+<stat name="Test" pass="0" fail="1" id="s1-s2">Result &amp; Test.Test</stat>
+</suite>
+</statistics>
+<errors>
+<msg level="ERROR" timestamp="20180907 18:24:38.283">Error in file 'C:\Users\ankush.mehta\TestRobot\Tests\Test.robot': Replacing variables from setting 'Resource' failed: Variable '${Root}' not found.</msg>
+</errors>
+</robot>
