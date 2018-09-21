@@ -2,7 +2,7 @@
 Documentation    """Suite to show case execution/tear up/ tear down"""
 
 Suite Setup     Log  "Suite Tear Up"
-Suite Teardown    Log   "Suite Tear Down"
+Suite Teardown    Log   "Suite Tear Down1"
 
 Test Setup    Log  "Common Test Tear Up"
 Test Teardown    Log  "Common Test Tear Down1"
