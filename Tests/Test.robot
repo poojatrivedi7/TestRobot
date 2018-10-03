@@ -24,3 +24,10 @@ TC_2007
     [Tags]    smoke
 
     Log    Login 2
+
+
+TC_2008
+    [Documentation]     Test Case for Login
+    [Tags]    smoke
+
+    4/5
